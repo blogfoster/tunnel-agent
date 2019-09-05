@@ -46,6 +46,7 @@ function httpsOverHttps(options) {
 
 
 function TunnelingAgent(options) {
+  console.log('Using blogfoster forked tunnel-agent package...')
   var self = this
   self.options = options || {}
   self.proxyOptions = self.options.proxy || {}
