@@ -157,7 +157,8 @@ TunnelingAgent.prototype.createSocket = function createSocket(options, cb) {
     socket.removeAllListeners()
 
     if (res.statusCode === 200) {
-      assert.equal(head.length, 0)
+      // tnolet: this crashes any process, regardless of try/catch because of the nextTick it is called from.
+      // assert.equal(head.length, 0)
       debug('tunneling connection has established')
       self.sockets[self.sockets.indexOf(placeholder)] = socket
       cb(socket)
